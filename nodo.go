@@ -5,12 +5,14 @@ import (
 )
 
 type Nodo struct {
-	dato  string
-	peso  int
-	hijos []*Nodo
+	dato  string  //El contenido del nodo, una letra
+	peso  int     //Peso del nodo, no utilizado todavia
+	hijos []*Nodo //Vector de punteros a nodos hijos.
 }
 
 func main() {
+
+	//Inicializacion del arbol de acuerdo a lo visto en el apunte de clase.
 	raiz := &Nodo{dato: "A"}
 	nodo1 := &Nodo{dato: "D"}
 	nodo2 := &Nodo{dato: "F"}
@@ -26,6 +28,7 @@ func main() {
 	nodo12 := &Nodo{dato: "W"}
 	nodo13 := &Nodo{dato: "B"}
 
+	//Inicializacion de las relaciones
 	raiz.hijos = append(raiz.hijos, nodo1)
 	raiz.hijos = append(raiz.hijos, nodo2)
 	raiz.hijos = append(raiz.hijos, nodo3)
@@ -39,6 +42,8 @@ func main() {
 	nodo6.hijos = append(nodo6.hijos, nodo11)
 	nodo6.hijos = append(nodo6.hijos, nodo12)
 	nodo10.hijos = append(nodo10.hijos, nodo13)
+
+	//Llamado a la solucion por primero amplitud, devuelve los nodos visitados.
 	fmt.Println(primero_amplitud(raiz, "B"))
 
 }
