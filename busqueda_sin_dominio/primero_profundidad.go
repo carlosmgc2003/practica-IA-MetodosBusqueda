@@ -3,7 +3,8 @@ package busqueda_sin_dominio
 import "container/list"
 
 func Primero_profundidad(raiz *Nodo, buscado string) []string {
-	//Algoritmo de primero en profundidad, el problema por ahora es que destruye el grafo.
+	//Algoritmo que recorre el grafo, rama a rama, haciendo backtracking cuando no encuentra la solucion, el problema
+	//por ahora es que destruye el grafo.
 	solucion := make([]string, 0)
 	pila := list.New()
 	pila.PushFront(raiz)
